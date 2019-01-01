@@ -1,1 +1,25 @@
+html {
+  font-size: 1rem;
+  color: black;
+  width: 100%;
+}
 
+#root {
+  width: 1405px;
+  text-align: center;
+}
+
+.navbar-brand, .navbar {
+  font-size: 1.5rem;
+}
+
+.navbar {
+  font-family: Maison Neue Extended TRIAL;
+  line-height: normal;
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  text-transform: uppercase;
+  color: black;
+}
