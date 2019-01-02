@@ -31,11 +31,11 @@ const ProgressBar = (props) => {
           </div>
         </div>
       </div>
-      <div className="w-75 m-auto d-flex justify-content-between">
-        <p className="text-uppercase">Corporate Email</p>
-        <p className="text-uppercase">Personal Email</p>
-        <p className="text-uppercase">Salesforce</p>
-        <p className="text-uppercase">Analysis</p>
+      <div className="progress-text w-75 m-auto d-flex justify-content-between">
+        <p className={active.corporate ? `text-uppercase active` : `text-uppercase`}>Corporate Email</p>
+        <p className={active.personal ? `text-uppercase active` : `text-uppercase`}>Personal Email</p>
+        <p className={active.salesforce ? `text-uppercase active` : `text-uppercase`}>Salesforce</p>
+        <p className={active.analysis ? `text-uppercase active` : `text-uppercase`}>Analysis</p>
       </div>
     </div>
   )
