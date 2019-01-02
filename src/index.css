@@ -1,3 +1,7 @@
+--root{
+  --text-size: 15px;
+}
+
 html {
   width: 100%;
 }
@@ -80,7 +84,7 @@ html {
 .progress-text > p {
   font-family: Maison Mono;
   line-height: 33px;
-  font-size: 18px;
+  font-size: var(--text-size);
   color: #919191;
 }
 
@@ -109,7 +113,7 @@ html {
 .form > .form-group {
   font-family: Maison Neue;
   line-height: 20px;
-  font-size: 16px;
+  font-size: var(--text-size);
   text-align: left;
   color: #6F7983;
   font-weight: bold;
