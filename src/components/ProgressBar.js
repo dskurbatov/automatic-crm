@@ -2,16 +2,33 @@ import React from 'react'
 
 const ProgressBar = (props) => {
   const { isCorporateSet, isPersonalSet, isSalesForceSet } = props.settings
-  const isTrue = Object.values(props.settings).every(item => item === true)
+  const { active } = props
+  const isAllTrue = Object.values(props.settings).every(item => item === true)
   
   return(
     <div className="progressBar">
-      <div className="wrapper">
-        <div className="innerBar w-75 m-auto">
-          <div className="knob">{isCorporateSet && <span className="check"></span>}</div>
-          <div className="knob">{isPersonalSet && <span className="check"></span>}</div>
-          <div className="knob">{isSalesForceSet && <span className="check"></span>}</div>
-          <div className="knob">{isTrue && <span className="check"></span>}</div>
+      <div className="wrapper w-75 m-auto">
+        <div className="innerBar w-100 m-auto">
+          <div className={active.corporate ? `knob active` : `knob`}>
+            <div className="circle">
+            {isCorporateSet && <div className="check"></div>}            
+            </div>
+          </div>
+          <div className={active.personal ? `knob active` : `knob`}>
+            <div className="circle">
+              {isPersonalSet && <div className="check"></div>}
+            </div>
+          </div>
+          <div className={active.salesforce ? `knob active` : `knob`}>
+            <div className="circle">
+              {isSalesForceSet && <div className="check"></div>}
+            </div>
+          </div>
+          <div className={active.analysis ? `knob active` : `knob`}>
+            <div className="circle">
+              {isAllTrue && <div className="check"></div>}
+            </div>
+          </div>
         </div>
       </div>
       <div className="w-75 m-auto d-flex justify-content-between">
