@@ -13,7 +13,7 @@ html {
 }
 
 .progressBar {
-  margin-top: 50px;
+  margin-top: 30px;
   height: 87px;
 }
 
@@ -89,7 +89,7 @@ html {
 }
 
 .info {
-  margin-top: 50px;
+  margin-top: 30px;
   width: 603px;
 }
 
@@ -103,7 +103,7 @@ html {
 
 .form {
   width: 291px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .form > .form-group {
@@ -126,3 +126,4 @@ input[type=submit] {
   background: linear-gradient(121.85deg, #2AFADF -36.27%, #4C83FF 97.25%);
   border: none;
 }
+
