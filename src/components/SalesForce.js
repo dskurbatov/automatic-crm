@@ -25,6 +25,10 @@ class SalesForce extends React.Component{
     errors: {}
   }
 
+  componentDidMount(){
+    this.props.setActive('salesforce')
+  }
+
   onSubmit = (state) => {
     const errors = {}
     if(!isValidEmail(state.email)){
@@ -53,7 +57,7 @@ class SalesForce extends React.Component{
             return(
               <React.Fragment>
                 <Input 
-                  parentClassName="form-group"
+                  parentClassName="form-group text-uppercase"
                   onChange={onChange('email')}
                   error={errors.email}
                   id="formControlInput3"
@@ -63,7 +67,7 @@ class SalesForce extends React.Component{
                   name="SalesForce Login"
                 />
                 <Input 
-                  parentClassName="form-group"
+                  parentClassName="form-group text-uppercase"
                   onChange={onChange('password')}
                   error={errors.password}
                   id="inputPassword3"
@@ -73,8 +77,8 @@ class SalesForce extends React.Component{
                   name="Password"
                 />
                 <div className="d-flex justify-content-around">
-                  <Link to="/analysis" className="btn btn-secondary button-size">Skip</Link>
-                  <button type="submit" className="btn btn-primary button-size">Next</button>
+                  <Link to="/analysis" className="btn btn-secondary button-size text-uppercase">Skip</Link>
+                  <input type="submit" className="btn btn-primary button-size text-uppercase" value="Next"/>
                 </div>
               </React.Fragment>
             )

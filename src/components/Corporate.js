@@ -24,6 +24,10 @@ class Corporate extends React.Component {
     errors: {}
   }
 
+  componentDidMount(){
+    this.props.setActive('corporate')
+  }
+
   onSubmit = (state) => {
     const errors = {}
     if(!isValidEmail(state.email)){
@@ -52,13 +56,13 @@ class Corporate extends React.Component {
             return(
               <React.Fragment>
                 <Select
-                  parentClassName="form-group" 
+                  parentClassName="form-group text-uppercase" 
                   id="formControlSelect1"
                   className="form-control"
                   onChange={onChange('type')}
                 />
                 <Input 
-                  parentClassName="form-group"
+                  parentClassName="form-group text-uppercase"
                   onChange={onChange('email')}
                   error={errors.email}
                   id="formControlInput1"
@@ -68,7 +72,7 @@ class Corporate extends React.Component {
                   name="Corporate Email Login"
                 />
                 <Input 
-                  parentClassName="form-group"
+                  parentClassName="form-group text-uppercase"
                   onChange={onChange('password')}
                   error={errors.password}
                   id="inputPassword1"
@@ -78,8 +82,8 @@ class Corporate extends React.Component {
                   name="Password"
                 />
                 <div className="d-flex justify-content-around">
-                  <Link to="/personal" className="btn btn-secondary button-size">Skip</Link>
-                  <button type="submit" className="btn btn-primary button-size">Next</button>
+                  <Link to="/personal" className="btn btn-secondary button-size text-uppercase">Skip</Link>
+                  <input type="submit" className="btn btn-primary button-size text-uppercase" value="Next"/>
                 </div>
               </React.Fragment>
             )
