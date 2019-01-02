@@ -25,7 +25,7 @@ html {
 }
 
 .wrapper {
-  height: 50px;
+  height: 36px;
 }
 
 .wrapper .active {
@@ -34,8 +34,8 @@ html {
 
 .knob {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   padding: 2px;
   top: 50%;
@@ -52,11 +52,11 @@ html {
 
 .check {
   position: absolute;
-  left: 40%;
-  top: 15%;
+  left: 36%;
+  top: 22%;
   transform: rotate(45deg);
-  height: 25px;
-  width: 15px;
+  height: 14.5px;
+  width: 12.5px;
   border-bottom: 3px solid rgba(23, 151, 166, 0.83);;
   border-right: 3px solid rgba(23, 151, 166, 0.83);;
 }
@@ -66,22 +66,26 @@ html {
 }
 
 .knob:nth-child(2) {
-  left: calc(33.3% - 25px);
+  left: calc(33.3% - 18px);
 }
 
 .knob:nth-child(3) {
-  left: calc(66.6% - 25px);
+  left: calc(66.6% - 18px);
 }
 
 .knob:nth-child(4) {
-  left: calc(100% - 50px);
+  left: calc(100% - 36px);
 }
 
-p {
+.progress-text > p {
   font-family: Maison Mono;
   line-height: 33px;
   font-size: 18px;
   color: #919191;
+}
+
+.progress-text > p.active {
+  color: #487BED;
 }
 
 .info {
