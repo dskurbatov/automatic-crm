@@ -9,7 +9,7 @@ import Input from './basic/Input'
 import { isValidEmail, isValidPassword, isEmpty } from '../helpers/validators'
 
 const text = [
-  'automaticCRM connects to your corporate email server and runs a deep analysis on the people you contact, how often you’re in contact, the sentiment of your messages, and 34 other metrics. This is the first step of unlocking your network.',
+  'automaticCRM connects to your corporate email server and runs a deep analysis on the people you contact, how often you’re in contact, the sentiment of your messages, and 34 other metrics.',
   'This is the first step of unlocking you network.'
 ]
 
@@ -82,8 +82,8 @@ class Corporate extends React.Component {
                   name="Password"
                 />
                 <div className="d-flex justify-content-around">
-                  <Link to="/personal" className="btn btn-secondary button-size text-uppercase">Skip</Link>
-                  <input type="submit" className="btn btn-primary button-size text-uppercase" value="Next"/>
+                  <Link to="/personal" className="btn btn-secondary text-uppercase">Skip</Link>
+                  <input type="submit" className="btn btn-primary text-uppercase" value="Next"/>
                 </div>
               </React.Fragment>
             )

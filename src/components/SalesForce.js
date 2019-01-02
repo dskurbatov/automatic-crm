@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Info from './basic/Info'
 import Form from './basic/Form'
-import Select from './basic/Select'
 import Input from './basic/Input'
 
 //helper methods
@@ -11,7 +10,7 @@ import { isValidEmail, isValidPassword, isEmpty } from '../helpers/validators'
 
 
 const text = [
-  'Once we’ve completed our analysis of your personal network, we synchronize your contacts along with our customized relationship score directly into your SalesForce account. This is the third step of unlocking your network.',
+  'Once we’ve completed our analysis of your personal network, we synchronize your contacts along with our customized relationship score directly into your SalesForce account.',
   'This is the third step of unlocking you network.'
 ]
 
@@ -77,8 +76,8 @@ class SalesForce extends React.Component{
                   name="Password"
                 />
                 <div className="d-flex justify-content-around">
-                  <Link to="/analysis" className="btn btn-secondary button-size text-uppercase">Skip</Link>
-                  <input type="submit" className="btn btn-primary button-size text-uppercase" value="Next"/>
+                  <Link to="/analysis" className="btn btn-secondary text-uppercase">Skip</Link>
+                  <input type="submit" className="btn btn-primary text-uppercase" value="Next"/>
                 </div>
               </React.Fragment>
             )

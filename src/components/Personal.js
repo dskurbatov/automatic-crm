@@ -10,7 +10,7 @@ import { isValidEmail, isValidPassword, isEmpty } from '../helpers/validators'
 
 
 const text = [
-  'automaticCRM also connects to your personal email server and runs a deep analysis on the people you contact, how often you’re in contact, the sentiment of your messages, and 34 other metrics. This is the second step of unlocking your network.',
+  'automaticCRM also connects to your personal email server and runs a deep analysis on the people you contact, how often you’re in contact, the sentiment of your messages, and 34 other metrics.',
   'This is the second step of unlocking you network.'
 ]
 
@@ -83,8 +83,8 @@ class Personal extends React.Component{
                   name="Password"
                 />
                 <div className="d-flex justify-content-around">
-                  <Link to="/salesforce" className="btn btn-secondary button-size text-uppercase">Skip</Link>
-                  <input type="submit" className="btn btn-primary button-size text-uppercase" value="Next"/>
+                  <Link to="/salesforce" className="btn btn-secondary text-uppercase">Skip</Link>
+                  <input type="submit" className="btn btn-primary text-uppercase" value="Next"/>
                 </div>
               </React.Fragment>
             )
