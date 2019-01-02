@@ -1,9 +1,8 @@
 import React from 'react'
 
 const ProgressBar = (props) => {
-  const { isCorporateSet, isPersonalSet, isSalesForceSet } = props.settings
+  const { isCorporateSet, isPersonalSet, isSalesForceSet, isAnalysisSet } = props.settings
   const { active } = props
-  const isAllTrue = Object.values(props.settings).every(item => item === true)
   
   return(
     <div className="progressBar">
@@ -26,7 +25,7 @@ const ProgressBar = (props) => {
           </div>
           <div className={active.analysis ? `knob active` : `knob`}>
             <div className="circle">
-              {isAllTrue && <div className="check"></div>}
+              {isAnalysisSet && <div className="check"></div>}
             </div>
           </div>
         </div>
