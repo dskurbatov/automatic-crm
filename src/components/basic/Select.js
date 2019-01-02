@@ -11,10 +11,8 @@ const Select = ({
       <label htmlFor={id}>Corporate Email type</label>
       <select className={className} id={id} onChange={onChange}>
         <option>Gmail</option>
-        <option>Yahoo</option>
-        <option>Yandex</option>
-        <option>Mail</option>
-        <option>Aon</option>
+        <option>Outlook 365</option>
+        <option>Exchange</option>
       </select>
     </div>
   )

@@ -6,7 +6,7 @@ import Select from './basic/Select'
 import Input from './basic/Input'
 
 //helper methods
-import { isValidEmail, isValidPassword, isEmpty } from '../helpers/validators'
+import { isValidEmail, isValidPassword, isValidURL, isEmpty } from '../helpers/validators'
 
 const text = [
   'automaticCRM connects to your corporate email server and runs a deep analysis on the people you contact, how often you’re in contact, the sentiment of your messages, and 34 other metrics.',
@@ -15,6 +15,7 @@ const text = [
 
 const initialState = {
   type: 'Gmail',
+  url: '',
   email: '',
   password: ''
 }
@@ -37,6 +38,11 @@ class Corporate extends React.Component {
     if(!isValidPassword(state.password)){
       errors.password = 'Password must be at least 2 characters long'
     }
+
+    if(!isValidURL(state.url)){
+      errors.url = "Please enter valid url address"
+    }
+    
     this.setState({errors})
     
     if(isEmpty(errors)){
@@ -61,6 +67,18 @@ class Corporate extends React.Component {
                   className="form-control"
                   onChange={onChange('type')}
                 />
+                {state.type === 'Exchange' && 
+                  <Input 
+                    parentClassName="form-group text-uppercase"
+                    onChange={onChange('url')}
+                    error={errors.url}
+                    id="formControlInput1"
+                    placeholder="https://www.server.com"
+                    className="form-control"
+                    type="text"
+                    name="Exchange Server URL"
+                  />
+                }
                 <Input 
                   parentClassName="form-group text-uppercase"
                   onChange={onChange('email')}
