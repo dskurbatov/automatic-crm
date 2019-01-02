@@ -1,20 +1,9 @@
 html {
-  font-size: 1rem;
-  color: black;
   width: 100%;
 }
 
 #root {
-  width: 100%;
   text-align: center;
-}
-
-.navbar-brand {
-  font-weight: bold;
-}
-
-.navbar-brand, .navbar {
-  font-size: 1.5rem;
 }
 
 .navbar {
@@ -23,41 +12,48 @@ html {
   letter-spacing: 0.02em;
 }
 
-.nav-link {
-  text-transform: uppercase;
-  color: black;
-}
-
 .progressBar {
-  margin-top: 50px;
+  margin-top: 100px;
   height: 87px;
 }
 
 .innerBar {
   top: 50%;
   position: relative;
-  height: 3px;
-  background-color: gray;
+  height: 2px;
+  background: linear-gradient(121.85deg, #2AFADF -36.27%, #4C83FF 97.25%);
 }
 
 .wrapper {
   height: 50px;
 }
+
+.wrapper .active {
+  background: linear-gradient(121.85deg, #2AFADF -36.27%, #4C83FF 97.25%);
+}
+
 .knob {
   position: absolute;
   width: 50px;
   height: 50px;
-  border: 3px solid grey;
   border-radius: 50%;
+  padding: 2px;
   top: 50%;
-  background-color: white;
-  transform: translate(-50%, -50%);
+  background: #cecece; 
+  transform: translateY(-50%);
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: white;
 }
 
 .check {
   position: absolute;
   left: 40%;
-  top: 10%;
+  top: 15%;
   transform: rotate(45deg);
   height: 25px;
   width: 15px;
@@ -65,20 +61,20 @@ html {
   border-right: 3px solid rgba(23, 151, 166, 0.83);;
 }
 
-.knob:nth-child(1) {
+.knob:nth-child(1){
   left: 0;
 }
 
 .knob:nth-child(2) {
-  left: 33%;
+  left: calc(33.3% - 25px);
 }
 
 .knob:nth-child(3) {
-  left: 66%;
+  left: calc(66.6% - 25px);
 }
 
 .knob:nth-child(4) {
-  left: 100%;
+  left: calc(100% - 50px);
 }
 
 p {
@@ -110,13 +106,19 @@ p {
   font-family: Maison Neue;
   line-height: 27px;
   font-size: 16px;
-  text-transform: uppercase;
   text-align: left;
   color: #6F7983;
   font-weight: bold;
 }
 
-.button-size {
+.btn {
   width: 132px;
   height: 39px;
+  font-family: Maison Neue Extended TRIAL;
+  color: #FFFFFF;
+}
+
+input[type=submit] {
+  background: linear-gradient(121.85deg, #2AFADF -36.27%, #4C83FF 97.25%);
+  border: none;
 }
