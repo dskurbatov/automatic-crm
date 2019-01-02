@@ -12,11 +12,16 @@ class App extends Component {
       isCorporateSet: false,
       isPersonalSet: false,
       isSalesForceSet: false
-    }
+    },
+    active: {}
   }
 
-  componentDidUpdate(){
-    console.log('app', this.state)
+  setActive = (key) => {
+    this.setState({
+      active: {
+        [key]: true
+      }
+    })
   }
   
   onSubmit = (key) => (value) => {
@@ -36,21 +41,21 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <div className="container">
-          <h1 className="display-4">Welcome To Automatic-CRM</h1>
-          <ProgressBar settings={this.state.settings}/>
+          {/* <h1 className="display-4">Welcome To Automatic-CRM</h1> */}
+          <ProgressBar settings={this.state.settings} active={this.state.active}/>
           <Router>
             <div>
               <Route 
                 exact path='/' 
-                render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} />}
+                render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} />}
               />
               <Route
                 path='/personal'
-                render={(props) => <Personal {...props} onSubmit={this.onSubmit('isPersonalSet')} />}
+                render={(props) => <Personal {...props} onSubmit={this.onSubmit('isPersonalSet')} setActive={this.setActive} />}
                 />
               <Route 
                 path='/salesforce'
-                render={(props) => <SalesForce {...props} onSubmit={this.onSubmit('isSalesForceSet')} />}
+                render={(props) => <SalesForce {...props} onSubmit={this.onSubmit('isSalesForceSet')} setActive={this.setActive} />}
               />
               <Route 
                 path='/analysis'
