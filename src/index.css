@@ -95,7 +95,7 @@ html {
 
 .info > p {
   font-family: Maison Neue;
-  line-height: 37px;
+  line-height: 30px;
   font-size: 22px;
   text-align: left;
   color: black;
@@ -108,7 +108,7 @@ html {
 
 .form > .form-group {
   font-family: Maison Neue;
-  line-height: 27px;
+  line-height: 20px;
   font-size: 16px;
   text-align: left;
   color: #6F7983;
