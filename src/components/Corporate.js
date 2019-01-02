@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Info from './basic/Info'
 import Form from './basic/Form'
+import Select from './basic/Select'
+import Input from './basic/Input'
 
 //helper methods
 import { isValidEmail, isValidPassword, isEmpty } from '../helpers/validators'
@@ -49,26 +51,32 @@ class Corporate extends React.Component {
           {(state, onChange) => {
             return(
               <React.Fragment>
-                <div className="form-group">
-                  <label htmlFor="exampleFormControlSelect1">Corporate Email type</label>
-                  <select className="form-control" id="exampleFormControlSelect1" onChange={onChange('type')}>
-                    <option>Gmail</option>
-                    <option>Yahoo</option>
-                    <option>Yandex</option>
-                    <option>Mail</option>
-                    <option>Aon</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleFormControlInput1">Corporate Email login</label>
-                  <input onChange={onChange('email')} type="email" className="form-control" id="exampleFormControlInput1" placeholder="user@company.com" />
-                  {errors.email && <div className="text-danger">{errors.email}</div>}
-                </div>
-                <div className="form-group">
-                  <label htmlFor="inputPassword">Password</label>
-                  <input onChange={onChange('password')} type="password" className="form-control" id="inputPassword" placeholder="Password" />
-                  {errors.password && <div className="text-danger">{errors.password}</div>}
-                </div>
+                <Select
+                  parentClassName="form-group" 
+                  id="formControlSelect1"
+                  className="form-control"
+                  onChange={onChange('type')}
+                />
+                <Input 
+                  parentClassName="form-group"
+                  onChange={onChange('email')}
+                  error={errors.email}
+                  id="formControlInput1"
+                  placeholder="user@company.com"
+                  className="form-control"
+                  type="email"
+                  name="Corporate Email Login"
+                />
+                <Input 
+                  parentClassName="form-group"
+                  onChange={onChange('password')}
+                  error={errors.password}
+                  id="inputPassword1"
+                  placeholder="Password"
+                  className="form-control"
+                  type="password"
+                  name="Password"
+                />
                 <div className="d-flex justify-content-around">
                   <Link to="/personal" className="btn btn-secondary button-size">Skip</Link>
                   <button type="submit" className="btn btn-primary button-size">Next</button>
