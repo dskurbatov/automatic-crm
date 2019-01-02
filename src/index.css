@@ -5,8 +5,12 @@ html {
 }
 
 #root {
-  width: 1405px;
+  width: 100%;
   text-align: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
 }
 
 .navbar-brand, .navbar {
@@ -22,4 +26,97 @@ html {
 .nav-link {
   text-transform: uppercase;
   color: black;
+}
+
+.progressBar {
+  margin-top: 50px;
+  height: 87px;
+}
+
+.innerBar {
+  top: 50%;
+  position: relative;
+  height: 3px;
+  background-color: gray;
+}
+
+.wrapper {
+  height: 50px;
+}
+.knob {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 3px solid grey;
+  border-radius: 50%;
+  top: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+
+.check {
+  position: absolute;
+  left: 40%;
+  top: 10%;
+  transform: rotate(45deg);
+  height: 25px;
+  width: 15px;
+  border-bottom: 3px solid rgba(23, 151, 166, 0.83);;
+  border-right: 3px solid rgba(23, 151, 166, 0.83);;
+}
+
+.knob:nth-child(1) {
+  left: 0;
+}
+
+.knob:nth-child(2) {
+  left: 33%;
+}
+
+.knob:nth-child(3) {
+  left: 66%;
+}
+
+.knob:nth-child(4) {
+  left: 100%;
+}
+
+p {
+  font-family: Maison Mono;
+  line-height: 33px;
+  font-size: 18px;
+  color: #919191;
+}
+
+.info {
+  margin-top: 50px;
+  width: 603px;
+}
+
+.info > p {
+  font-family: Maison Neue;
+  line-height: 37px;
+  font-size: 22px;
+  text-align: left;
+  color: black;
+}
+
+.form {
+  width: 291px;
+  margin-top: 50px;
+}
+
+.form > .form-group {
+  font-family: Maison Neue;
+  line-height: 27px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #6F7983;
+  font-weight: bold;
+}
+
+.button-size {
+  width: 132px;
+  height: 39px;
 }
