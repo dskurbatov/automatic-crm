@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Info from './basic/Info'
 import Form from './basic/Form'
 
@@ -34,6 +35,7 @@ class Corporate extends React.Component {
     
     if(isEmpty(errors)){
       this.props.onSubmit(true)
+      this.props.history.push('/personal')
     }
     return
   }
@@ -68,7 +70,7 @@ class Corporate extends React.Component {
                   {errors.password && <div className="text-danger">{errors.password}</div>}
                 </div>
                 <div className="d-flex justify-content-around">
-                  <button type="submit" className="btn btn-secondary button-size">Skip</button>
+                  <Link to="/personal" className="btn btn-secondary button-size">Skip</Link>
                   <button type="submit" className="btn btn-primary button-size">Next</button>
                 </div>
               </React.Fragment>
