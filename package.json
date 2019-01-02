@@ -1,5 +1,6 @@
 {
   "name": "automatic-crm",
+  "homepage": "https://safe-headland-51561.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
