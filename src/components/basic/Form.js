@@ -16,7 +16,7 @@ class Form extends React.Component {
 
   render(){
     return (
-      <form onSubmit={this.onSubmit} className="form">
+      <form onSubmit={this.onSubmit} className="form" noValidate>
         {this.props.children(this.state, this.onChange)}
       </form>
     )
