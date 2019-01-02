@@ -4,6 +4,7 @@ import ProgressBar from './components/ProgressBar'
 import Corporate from './components/Corporate'
 import Personal from './components/Personal'
 import SalesForce from './components/SalesForce'
+import Analysis from './components/Analysis'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
     settings: {
       isCorporateSet: false,
       isPersonalSet: false,
-      isSalesForceSet: false
+      isSalesForceSet: false,
+      isAnalysisSet: false
     },
     active: {}
   }
@@ -59,7 +61,7 @@ class App extends Component {
               />
               <Route 
                 path='/analysis'
-                render={(props) => <div><h1 className="display-4">Congratulation You are Done!!!</h1></div>}
+                render={(props) => <Analysis {...props} setActive={this.setActive} />}
               />
               </div>
           </Router>
