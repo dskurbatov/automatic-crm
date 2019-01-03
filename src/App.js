@@ -5,6 +5,7 @@ import Corporate from './components/Corporate'
 import Personal from './components/Personal'
 import SalesForce from './components/SalesForce'
 import Analysis from './components/Analysis'
+import List from './components/basic/List'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -15,13 +16,30 @@ class App extends Component {
       isSalesForceSet: false,
       isAnalysisSet: false
     },
-    active: {}
+    active: {},
+    users: {
+      corporate: {},
+      personal: {},
+      salesforce: {}
+    }
   }
 
   setActive = (key) => {
     this.setState({
       active: {
         [key]: true
+      }
+    })
+  }
+
+  setUser = (type) => (value) => {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        users: {
+          ...prevState.users,
+          [type]: value
+        }
       }
     })
   }
@@ -45,11 +63,12 @@ class App extends Component {
         <div className="container">
           {/* <h1 className="display-4">Welcome To Automatic-CRM</h1> */}
           <ProgressBar settings={this.state.settings} active={this.state.active}/>
+          <List item={this.state.users.corporate} />
           <Router>
             <div>
               <Route 
                 exact path='/' 
-                render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} />}
+                render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} setUser={this.setUser('corporate')} />}
               />
               <Route
                 path='/personal'
