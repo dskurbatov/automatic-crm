@@ -39,7 +39,7 @@ class Corporate extends React.Component {
       errors.password = 'Password must be at least 2 characters long'
     }
 
-    if(!isValidURL(state.url)){
+    if(state.type === 'Exchange' && !isValidURL(state.url)){
       errors.url = "Please enter valid url address"
     }
     
@@ -73,13 +73,13 @@ class Corporate extends React.Component {
                     onChange={onChange('url')}
                     error={errors.url}
                     id="formControlInput1"
-                    placeholder="https://www.server.com"
+                    placeholder="mail.cisco.com"
                     className="form-control"
                     type="text"
                     name="Exchange Server URL"
                   />
                 }
-                <Input 
+                  <Input 
                   parentClassName="form-group text-uppercase"
                   onChange={onChange('email')}
                   error={errors.email}

@@ -11,5 +11,5 @@ export const isEmpty = (obj) => {
 }
 
 export const isValidURL = (str) => {
-  return /https?/.test(str)
+  return str.startsWith('mail.') && str.endsWith('.com')
 }
