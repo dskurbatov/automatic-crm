@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { GoogleLogin } from 'react-google-login'
 import Info from './basic/Info'
 import Form from './basic/Form'
 import Select from './basic/Select'
@@ -52,11 +53,27 @@ class Corporate extends React.Component {
     return
   }
 
+  onSignIn = (googleUser) => {
+    console.log(googleUser)
+    const user = Object.assign({}, googleUser.profileObj, {tokenId: googleUser.tokenId})
+    this.props.setUser(user)
+  }
+
+  onError = (err) => {
+    console.log(err)
+  }
+
   render(){
     const { errors } = this.state
     return (
       <React.Fragment>
         <Info text={text} />
+        <GoogleLogin
+          clientId="340145829210-7se6mbp5gpntdlqnrnr3nni51lhj0q2a.apps.googleusercontent.com"
+          buttonText="Sign in"
+          onSuccess={this.onSignIn}
+          onFailure={this.onError}
+        />
         <Form onSubmit={this.onSubmit} initialState={initialState}>
           {(state, onChange) => {
             return(
