@@ -61,7 +61,6 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <div className="container">
-          {/* <h1 className="display-4">Welcome To Automatic-CRM</h1> */}
           <ProgressBar settings={this.state.settings} active={this.state.active}/>
           <List item={this.state.users.corporate} />
           <Router>
