@@ -4,15 +4,15 @@ const Select = ({
   id,
   className,
   onChange,
-  parentClassName
+  parentClassName,
+  options,
+  name
 }) => {
   return (
     <div className={parentClassName}>
-      <label htmlFor={id}>Corporate Email type</label>
+      <label htmlFor={id}>{name}</label>
       <select className={className} id={id} onChange={onChange}>
-        <option>Gmail</option>
-        <option>Outlook 365</option>
-        <option>Exchange</option>
+        {options.map((option, idx) => <option key={idx}>{option}</option>)}
       </select>
     </div>
   )
