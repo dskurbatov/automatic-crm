@@ -64,24 +64,26 @@ class App extends Component {
           <ProgressBar settings={this.state.settings} active={this.state.active}/>
           <List item={this.state.users.corporate} />
           <Router>
-            <div>
-              <Route 
-                exact path='/' 
-                render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} setUser={this.setUser('corporate')} />}
-              />
-              <Route
-                path='/personal'
-                render={(props) => <Personal {...props} onSubmit={this.onSubmit('isPersonalSet')} setActive={this.setActive} />}
+            <Route path="/setup">
+              <div>
+                <Route 
+                  path='/setup' 
+                  render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} setUser={this.setUser('corporate')} />}
                 />
-              <Route 
-                path='/salesforce'
-                render={(props) => <SalesForce {...props} onSubmit={this.onSubmit('isSalesForceSet')} setActive={this.setActive} />}
-              />
-              <Route 
-                path='/analysis'
-                render={(props) => <Analysis {...props} setActive={this.setActive} />}
-              />
+                <Route
+                  path='setup/personal'
+                  render={(props) => <Personal {...props} onSubmit={this.onSubmit('isPersonalSet')} setActive={this.setActive} setUser={this.setUser('personal')} />}
+                  />
+                <Route 
+                  path='setup/salesforce'
+                  render={(props) => <SalesForce {...props} onSubmit={this.onSubmit('isSalesForceSet')} setActive={this.setActive} />}
+                />
+                <Route 
+                  path='setup/analysis'
+                  render={(props) => <Analysis {...props} setActive={this.setActive} />}
+                />
               </div>
+            </Route>
           </Router>
         </div>
       </React.Fragment>
