@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { GoogleLogin } from 'react-google-login'
+import MicrosoftLogin from 'react-microsoft-login'
 import Info from './basic/Info'
 import Form from './basic/Form'
 import Select from './basic/Select'
@@ -54,9 +55,16 @@ class Corporate extends React.Component {
   }
 
   onSignIn = (googleUser) => {
-    console.log(googleUser)
     const user = Object.assign({}, googleUser.profileObj, {tokenId: googleUser.tokenId})
     this.props.setUser(user)
+  }
+
+  onSignInMS = (err, user) => {
+    if(err){
+      console.log(err)
+    } else {
+      this.props.setUser(user)
+    }
   }
 
   onError = (err) => {
@@ -68,12 +76,21 @@ class Corporate extends React.Component {
     return (
       <React.Fragment>
         <Info text={text} />
-        <GoogleLogin
-          clientId="340145829210-7se6mbp5gpntdlqnrnr3nni51lhj0q2a.apps.googleusercontent.com"
-          buttonText="Sign in"
-          onSuccess={this.onSignIn}
-          onFailure={this.onError}
-        />
+        <div>
+          <GoogleLogin
+            clientId="340145829210-7se6mbp5gpntdlqnrnr3nni51lhj0q2a.apps.googleusercontent.com"
+            buttonText="Sign in"
+            onSuccess={this.onSignIn}
+            onFailure={this.onError}
+          />
+          <MicrosoftLogin
+            clientId={"6756d763-3e9c-4728-803b-aae818ca4a89"}
+            buttonTheme={"light_short"}
+            graphScopes={["user.read"]}
+            withUserData={true}
+            authCallback={this.onSignInMS}  
+          />
+        </div>
         <Form onSubmit={this.onSubmit} initialState={initialState}>
           {(state, onChange) => {
             return(
