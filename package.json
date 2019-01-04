@@ -4,9 +4,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "msal": "^0.2.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-google-login": "^4.0.1",
+    "react-microsoft-login": "^1.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.2"
   },
