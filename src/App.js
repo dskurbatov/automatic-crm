@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar'
-import ProgressBar from './components/ProgressBar'
 import Corporate from './components/Corporate'
 import Personal from './components/Personal'
 import SalesForce from './components/SalesForce'
 import Analysis from './components/Analysis'
-import List from './components/basic/List'
+import Profile from './components/Profile'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -61,29 +60,29 @@ class App extends Component {
       <React.Fragment>
         <Navbar />
         <div className="container">
-          <ProgressBar settings={this.state.settings} active={this.state.active}/>
-          <List item={this.state.users.corporate} />
           <Router>
-            <Route path="/setup">
-              <div>
-                <Route 
-                  path='/setup' 
-                  render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} setUser={this.setUser('corporate')} />}
+            <React.Fragment>
+              <Route 
+                exact path="/"
+                render={props => <Profile {...props} />}
+              />
+              <Route 
+                path='/corporate' 
+                render={(props) => <Corporate {...props} onSubmit={this.onSubmit('isCorporateSet')} setActive={this.setActive} setUser={this.setUser('corporate')} />}
+              />
+              <Route
+                path='/personal'
+                render={(props) => <Personal {...props} onSubmit={this.onSubmit('isPersonalSet')} setActive={this.setActive} setUser={this.setUser('personal')} />}
                 />
-                <Route
-                  path='setup/personal'
-                  render={(props) => <Personal {...props} onSubmit={this.onSubmit('isPersonalSet')} setActive={this.setActive} setUser={this.setUser('personal')} />}
-                  />
-                <Route 
-                  path='setup/salesforce'
-                  render={(props) => <SalesForce {...props} onSubmit={this.onSubmit('isSalesForceSet')} setActive={this.setActive} />}
-                />
-                <Route 
-                  path='setup/analysis'
-                  render={(props) => <Analysis {...props} setActive={this.setActive} />}
-                />
-              </div>
-            </Route>
+              <Route 
+                path='/salesforce'
+                render={(props) => <SalesForce {...props} onSubmit={this.onSubmit('isSalesForceSet')} setActive={this.setActive} />}
+              />
+              <Route 
+                path='/analysis'
+                render={(props) => <Analysis {...props} setActive={this.setActive} />}
+              />
+            </React.Fragment>
           </Router>
         </div>
       </React.Fragment>
