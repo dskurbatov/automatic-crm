@@ -9,7 +9,7 @@ html {
 
 #root {
   text-align: center;
-}
+} 
 
 .nav-link {
   font-size: var(--text-size);
@@ -124,7 +124,7 @@ html {
   font-weight: bold;
 }
 
-.btn {
+.form .btn {
   width: 132px;
   height: 39px;
   font-family: Maison Neue Extended TRIAL;
