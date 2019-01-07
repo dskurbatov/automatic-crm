@@ -1,11 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const List = (props) => {
+const List = ({items=[]}) => {
   return(
     <ul className="list-group list-group-flush text-left">
-      {Object.keys(props.item).map((key, idx) => <li key={idx} className="list-group-item">{key}: {props.item[key]}</li>)}
+      {items.map((item, idx) => <li key={idx} className="list-group-item">{item}</li>)}
     </ul>
   )
+}
+
+List.propTypes = {
+  items: PropTypes.array.isRequired
 }
 
 export default List
