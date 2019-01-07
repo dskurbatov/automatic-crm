@@ -9,7 +9,7 @@ const Emails = (props) => {
     <React.Fragment>
       <h4 className="border-bottom">{props.title}</h4>
       <List items={props.emails} />
-      {!props.emails && <Link to={props.to}>{`Set up ${props.title} Emails`}</Link>}
+      {!props.emails && <Link to={props.to} className="btn btn-primary btn-lg m-auto">{`Set up ${props.title} Emails`}</Link>}
     </React.Fragment>
   )
 }
